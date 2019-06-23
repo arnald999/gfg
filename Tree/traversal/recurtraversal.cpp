@@ -44,6 +44,36 @@ void postorder(Node *root)
 	cout<<root->data<<" ";
 }
 
+
+
+
+bool printlevel(Node *root, int level)
+{
+	if(root==NULL)
+		return false;
+	
+	if(level == 1)
+	{
+		cout<<root->data<<" ";
+		return true;
+	}
+	
+	bool left = printlevel(root->left, level-1);
+	bool right = printlevel(root->right, level-1);
+	
+	return left || right;
+}
+
+void levelorder(Node *root)
+{
+	int level = 1;
+	while(printlevel(root, level))
+		level++;
+}
+
+
+
+
 int main()
 {
 	Node* root = nullptr;
@@ -62,6 +92,8 @@ int main()
 	preorder(root);
 	cout<<endl<<"postorder : ";
 	postorder(root);
+	cout<<endl<<"levelorder : ";
+	levelorder(root);
 	cout<<endl;
 
 	return 0;
