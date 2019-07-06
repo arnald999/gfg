@@ -19,9 +19,9 @@ class MinHeap
 			MinHeap(int cap, int arr[])
 			{
 				this->capacity = cap;
-				this->heap_size = 0;
+				this->heap_size = cap;
 				this->harr = arr;
-				buildheap();
+				//buildheap();
 			}
 			int parent(int i)
 			{
@@ -128,6 +128,21 @@ class MinHeap
 void firstKelements(int arr[], int size, int k)
 {
 	MinHeap *m = new MinHeap(k,arr);
+	
+	for(int i=0; i<size; i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+	
+	m->buildheap();
+	
+	for(int i=0; i<size; i++)
+	{
+		cout<<arr[i]<<" ";
+	}
+	cout<<endl;
+	
 	
 	for(int i = k; i<size; i++)
 	{

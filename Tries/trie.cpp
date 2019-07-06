@@ -54,6 +54,22 @@ bool search(TrieNode *root, string key)
 	return (temp!=NULL && temp->endofword);
 }
 
+bool prefixsearch(TrieNode *root, string key)
+{
+	TrieNode *temp = root;
+	
+	for(int i=0; i<key.length(); i++)
+	{
+		int index = key[i]-'a';
+		if(!temp->children[index])
+			return false;
+		
+		temp = temp->children[index];
+	}
+	
+	return true;
+}
+
 int main() 
 { 
     // Input keys (use only 'a' through 'z' 
@@ -72,7 +88,10 @@ int main()
     // Search for different keys 
     search(root, "the")? cout << "Yes\n" : 
                          cout << "No\n"; 
-    search(root, "there")? cout << "Yes\n" : 
+    search(root, "th")? cout << "Yes\n" : 
+                           cout << "No\n"; 
+    prefixsearch(root, "these")? cout << "Yes\n" : 
                            cout << "No\n"; 
     return 0; 
+    
 } 

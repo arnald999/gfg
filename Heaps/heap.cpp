@@ -70,10 +70,14 @@ class MinHeap
 			int r = right(r);
 			int smallest = i;
 			
-			if(l<heap_size && harr[l]<harr[i])
+			// If left child is smaller than root
+			if(l<heap_size && harr[l]<harr[smallest])
 				smallest = l;
+				
+			// If right child is smaller than smallest so far
 			if(r<heap_size && harr[r]<harr[smallest])
 				smallest = r;
+			
 			if(smallest != i)
 			{
 				swap(&harr[i],&harr[smallest]);

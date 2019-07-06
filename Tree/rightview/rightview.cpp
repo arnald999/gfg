@@ -58,7 +58,5 @@ int main()
 	root->right->right = newnode(40);  
 
 	rightview(root);  
-
-	return 0;
 	return 0;
 }
