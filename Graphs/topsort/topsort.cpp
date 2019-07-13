@@ -8,8 +8,8 @@ void dfs(int u, bool visited[], vector<int> AL[], stack<int> &stk)
 	if(visited[u])
 		return;
 	
-	//cout<<u<<" ";
-	visited[u] = true;
+	//cout<<u<<" ";			//arrival[u]=++time;
+	visited[u] = true;	
 	vector<int> neighbors = AL[u];
 	
 	for(int i=0; i<neighbors.size(); i++)
@@ -17,7 +17,7 @@ void dfs(int u, bool visited[], vector<int> AL[], stack<int> &stk)
 		if(!visited[neighbors[i]])
 			dfs(neighbors[i],visited,AL,stk);
 	}
-	stk.push(u);
+	stk.push(u);		//departure[u]=++time;
 }
 
 

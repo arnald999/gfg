@@ -1,3 +1,16 @@
+/*
+	Tree Edge: 	arrival[u] < arrival[v]		departure[u] > departure[v]
+	Back Edge: 	arrival[u] > arrival[v]		departure[u] < departure[v]
+	Forward edge : 	arrival[u] < arrival[v]		departure[u] > departure[v]
+	Cross edge : 	arrival[u] > arrival[v]		departure[u] > departure[v]
+	
+	Back Edge in DFS => Cycle in Directed Graph
+	Cross Edge in BFS => Cycle in Undirected Graph
+*/
+
+
+
+
 #include <iostream>
 #include <stack>
 #include <vector>
