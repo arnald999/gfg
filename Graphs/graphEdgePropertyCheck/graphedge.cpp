@@ -27,6 +27,7 @@ void dfs(int u, int visited[], vector<int> AL[], int parent[])
 		{
 			parent[neighbors[i]] = u;
 			dfs(neighbors[i],visited,AL,parent);
+			cout<<"Tree Edge : "<<u<<"->"<<neighbors[i]<<endl;
 		}
 		else if(visited[neighbors[i]]==1)
 		{

@@ -84,13 +84,12 @@ int main()
 {
 	// vector of graph edges as per above diagram
 	vector<Edge> edges = {
-		{1, 2}, {2, 3}, {2, 8}, {3, 4}, {4, 6}, {5, 7},
-		{5, 9}, {8, 9}
+		{0,1},{0,2},{0,3},{2,4},{4,0}
 		// if we add 2->4 edge, graph is becomes non-Bipartite
 	};
 
 	// Number of nodes in the graph
-	int N = 10;
+	int N = 5;
 
 	// create a graph from edges
 	Graph graph(edges, N);

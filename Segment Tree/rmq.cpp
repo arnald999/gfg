@@ -38,7 +38,7 @@ int main()
 	
 	constructtree(arr,segment,0,3,0);
 	
-	cout<<RMQ(segment,1,2,2,3,0)<<endl;
+	cout<<RMQ(segment,1,2,0,3,0)<<endl;
 	cout<<RMQ(segment,1,3,0,3,0)<<endl;
 	cout<<RMQ(segment,0,2,0,3,0)<<endl;
 	return 0;

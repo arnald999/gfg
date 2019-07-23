@@ -2,7 +2,7 @@
 	Bipartite if and only if:
 		DFS - it is 2-colorable, current vertex to the next(or prev) vertex as different colour
 		BFS - it does not contain an odd cycle, if we find an Edge in BFS which are in the same level
-			level of vertex = min dist from stating vertex
+			level of vertex = min dist from starting vertex
 */
 
 
@@ -31,13 +31,13 @@ bool bfs(int u, int n, bool visited[], vector<int> AL[])
 		
 		for(int i=0; i<neighbors.size(); i++)
 		{
-			if(!visited[i])
+			if(!visited[neighbors[i]])
 			{
-				visited[i] = true;
-				level[i] = level[u] + 1;
-				q.push(i);
+				visited[neighbors[i]] = true;
+				level[neighbors[i]] = level[u] + 1;
+				q.push(neighbors[i]);
 			}
-			else if(level[u]==level[i])
+			else if(level[u]==level[neighbors[i]])
 				return false;
 		}	
 	}
