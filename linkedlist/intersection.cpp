@@ -72,7 +72,7 @@ void intersection(Node *head1, Node *head2)
 	
 	while(temp != NULL && temp2 != NULL)
 	{
-		if(temp->data == temp2->data)
+		if(temp == temp2)
 		{
 			cout<<"Intersection point is : "<<temp->data<<endl;
 			break;
