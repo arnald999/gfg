@@ -8,7 +8,7 @@ class Node
 		Node *next;
 };
 
-Node *head = NULL;
+//Node *head = NULL;
 
 void push(Node **rehead, int n)
 {
@@ -32,18 +32,18 @@ void print(Node *head)
 	cout<<endl;
 }
 
-void reverse(Node *curr)
+void reverse(Node *curr, Node **rehead)
 {	
 	if(curr == NULL)
 		return;
 	
 	if(curr->next == NULL)
 	{
-		head = curr;
+		*rehead = curr;
 		return;
 	}
 	
-	reverse(curr->next);
+	reverse(curr->next, rehead);
 	
 	curr->next->next = curr;
 	curr->next = NULL;
@@ -51,12 +51,13 @@ void reverse(Node *curr)
 
 int main()
 {
+	Node *head = NULL;
 	for(int i = 0; i<=5 ; i++)
 	{
 		push(&head,i);
 	}
 	print(head);
-	reverse(head);
+	reverse(head,&head);
 	print(head);
 	return 0;
 }
