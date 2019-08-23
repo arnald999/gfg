@@ -8,8 +8,7 @@ class Node
 		int x,y;
 };
 
-int dx[] = {-1, 1, 0, 0};
-int dy[] = {0, 0, -1, 1};
+
 
 bool is_valid(int i, int j, int row, int col, int **layout, bool **visited) {
     return (i>=0 && i<row && j>=0 && j<col && layout[i][j] && (!visited[i][j]));
@@ -17,6 +16,8 @@ bool is_valid(int i, int j, int row, int col, int **layout, bool **visited) {
 
 void dfs(int x, int y, int **layout, int row, int col, bool **visited, stack<Node> &stk)
 {
+	static int dx[] = {-1, 1, 0, 0};
+	static int dy[] = {0, 0, -1, 1};
 	Node s = {x,y};
 	stk.push(s);
 	for(int k=0; k<4; k++)
@@ -32,6 +33,7 @@ void dfs(int x, int y, int **layout, int row, int col, bool **visited, stack<Nod
 
 int isPath(int **layout, int row, int col)
 {
+	
 	if(layout[0][0]==0)
 		return 0;
 	

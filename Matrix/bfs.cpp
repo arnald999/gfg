@@ -8,15 +8,15 @@ class Node
 		int x,y,dist;
 };
 
-int dx[] = {-1, 1, 0, 0};
-int dy[] = {0, 0, -1, 1};
-
 bool is_valid(int i, int j, int row, int col, int **layout, bool **visited) {
     return (i>=0 && i<row && j>=0 && j<col && layout[i][j] && (!visited[i][j]));
 }
 
 int isPath(int **layout, int row, int col)
 {
+	static int dx[] = {-1, 1, 0, 0};
+	static int dy[] = {0, 0, -1, 1};
+
 	if(layout[0][0]==0)
 		return 0;
 	
